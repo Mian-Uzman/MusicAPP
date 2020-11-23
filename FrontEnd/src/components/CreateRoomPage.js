@@ -8,7 +8,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-//import { link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -105,7 +105,8 @@ export default class CreateRoomPage extends Component {
                 <Grid item xs={12} align="center">
                     <Button color="secondary"
                         variant="contained"
-                        href='/'
+                        to='/'
+                        component={Link}
                     >Goto Home</Button>
                 </Grid>
             </Grid>
