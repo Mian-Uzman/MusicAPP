@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
-import HomePage from './HomePage'
-import RoomJoinPage from './RoomJoinPage'
-import CreateRoomPage from './CreateRoomPage'
-import Meme from './Meme'
+import React, { Component } from 'react';
+import HomePage from './HomePage';
+import RoomJoinPage from './RoomJoinPage';
+import CreateRoomPage from './CreateRoomPage';
+import Meme from './Meme';
+import Room from './Room';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link,
     Redirect,
-} from "react-router-dom"
+} from "react-router-dom";
 
 export default class RoutePages extends Component {
     constructor(props) {
@@ -25,6 +26,7 @@ export default class RoutePages extends Component {
                     <Route path='/join' component={RoomJoinPage} />
                     <Route path='/create' component={CreateRoomPage} />
                     <Route path='/meme' component={Meme} />
+                    <Route path='/room/:roomCode' component={Room} />
                 </Switch>
             </Router>
         );
