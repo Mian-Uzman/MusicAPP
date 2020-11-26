@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+
+
 
 export default class Meme extends Component {
     constructor(props) {
@@ -7,9 +11,18 @@ export default class Meme extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Meme Page</h2>
-                <h1>Phuddi ke</h1>
-            </div>);
+            <Grid container spacing={1}>
+                <Grid item xs={12} align="center">
+                    <Typography component="h2" variant="h2">
+                        Meme Page
+            </Typography>
+                    <Grid item xs={4} align="center">
+                        <Typography component="p" variant="p">
+                            Phuddi Ke!
+            </Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+        );
     }
 }
