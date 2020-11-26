@@ -16,9 +16,9 @@ export default class HomePage extends Component {
                     <Typography component="h2" variant="h2">
                         Welcome To MusicAPP
                     </Typography>
-                    <Grid item xs={5} align="right">
+                    <Grid item xs={5} align="center">
                         <Typography component="p" variant="p">
-                            Uzman Munib
+                            Made by: Uzman Munib
                     </Typography>
                     </Grid>
                 </Grid>

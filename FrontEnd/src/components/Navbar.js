@@ -23,7 +23,7 @@ export default class Navbar extends Component {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/api/room">All Rooms(API View)
+            <a class="nav-item nav-link" href="/api/room">All Rooms (API View)
             <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/create">Create</a>
             <a class="nav-item nav-link" href="/join">Join</a>
