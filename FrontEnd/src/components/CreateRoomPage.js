@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -60,7 +61,7 @@ export default class CreateRoomPage extends Component {
         return (
             <Grid container spacing={1}>
                 <Grid item xs={12} align="center">
-                    <Typography component="h2" variant="h2">Create a Room</Typography>
+                    <Typography component="h3" variant="h3">Create a Room</Typography>
                 </Grid>
                 <Grid item xs={12} align="center">
                     <Box m={4} p={1}>
@@ -103,19 +104,21 @@ export default class CreateRoomPage extends Component {
                 </Grid>
                 <Grid item xs={12} align="center">
                     <Box m={4} p={3}>
-                        <Button color="primary"
-                            variant="contained"
-                            onClick={this.handleRoomButtonPressed}
-                        >Create a Room</Button>
-                        <Grid item xs={12} align="center">
-                            <Box m={1}>
-                                <Button color="secondary"
-                                    variant="contained"
-                                    to='/'
-                                    component={Link}
-                                >Goto Home</Button>
-                            </Box>
-                        </Grid>
+                        <ButtonGroup variant="contained">
+                            <Button color="primary"
+                                variant="contained"
+                                onClick={this.handleRoomButtonPressed}
+                            >Create a Room</Button>
+
+
+                            <Button color="secondary"
+                                variant="contained"
+                                to='/'
+                                component={Link}
+                            >Home</Button>
+
+
+                        </ButtonGroup>
                     </Box>
                 </Grid>
             </Grid>

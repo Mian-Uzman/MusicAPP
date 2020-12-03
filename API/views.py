@@ -4,9 +4,11 @@ from .serializers import RoomSerializer, CreateRoomSerializer
 from .models import Room
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+from django.http import JsonResponse
 
 # Create your views here.
+
+
 class RoomView(generics.ListAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
@@ -40,8 +42,8 @@ class CreateRoomView(APIView):
                 )
                 room.save()
                 self.request.session['room_code'] = room.code
-                return Response(RoomSerializer(room).data, status=status.HTTP_201_CREATED)
-
+                return Response(RoomSerializer(room).data,
+                                status=status.HTTP_201_CREATED)
         return Response(
             {"Bad Request": "Invalid data..."}, status=status.HTTP_400_BAD_REQUEST
         )
@@ -64,7 +66,6 @@ class GetRoom(APIView):
                 {"Room Not Found": "Invalid Room Code"},
                 status=status.HTTP_404_NOT_FOUND,
             )
-
         return Response(
             {"Bad Request": "Code Parameter not found in request"},
             status=status.HTTP_400_BAD_REQUEST,
@@ -84,6 +85,20 @@ class RoomJoin(APIView):
             if len(room_result) > 0:
                 room = room_result[0]
                 self.request.session['room_code'] = code
-                return Response({'message': 'Room Joined!'}, status=status.HTTP_200_OK)
-            return Response({'Bad Request': 'Invalid Room Code'}, status=status.HTTP_400_BAD_REQUEST)
-        return Response({'Bad Request': 'Invalid post data, did not find a code key'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'message': 'Room Joined!'},
+                                status=status.HTTP_200_OK)
+            return Response({'Bad Request': 'Invalid Room Code'},
+                            status=status.HTTP_400_BAD_REQUEST)
+        return Response({'Bad Request': 'Invalid post data, did not find a code key'},
+                        status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserInRoom(APIView):
+    def get(self, request, format=None):
+        if not self.request.session.exists(self.request.session.session_key):
+            self.request.session.create()
+
+        data = {
+            'code': self.request.session.get('room_code')
+        }
+        return JsonResponse(data, status=status.HTTP_200_OK)

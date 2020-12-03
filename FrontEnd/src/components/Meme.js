@@ -13,7 +13,7 @@ export default class Meme extends Component {
         return (
             <Grid container spacing={1}>
                 <Grid item xs={12} align="center">
-                    <Typography component="h2" variant="h2">
+                    <Typography component="h3" variant="h3">
                         Meme Page
             </Typography>
                     <Grid item xs={4} align="center">
@@ -22,7 +22,9 @@ export default class Meme extends Component {
             </Typography>
                     </Grid>
                 </Grid>
+
             </Grid>
+
         );
     }
 }

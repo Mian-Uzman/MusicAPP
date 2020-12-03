@@ -25,7 +25,7 @@ export default class Room extends Component {
     }
 
     render() {
-        return <div>
+        return <div style={{ paddingLeft: "20px" }}>
             <h3>Room Code: {this.roomCode}</h3>
             <p>Votes: {this.state.votesToSkip}</p>
             <p>Guest Can Pause: {this.state.guestCanPause.toString()}</p>

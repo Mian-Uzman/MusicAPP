@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextField, Button, Grid, Typography } from "@material-ui/core";
+import { TextField, Button, Grid, Typography, Box, ButtonGroup } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 export default class RoomJoinPage extends Component {
@@ -17,37 +17,41 @@ export default class RoomJoinPage extends Component {
         return (
             <Grid container spacing={1} align="center">
                 <Grid item xs={12}>
-                    <Typography component="h2" variant="h2">
+                    <Typography component="h3" variant="h3">
                         Join a Room
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <TextField
-                        error={this.state.error}
-                        label="Code"
-                        placeholder="Enter Room Code"
-                        value={this.state.roomCode}
-                        helperText={this.state.error}
-                        variant="outlined"
-                        onChange={this.handleTextFieldChange}
-                    />
+                    <Box m={4} p={1}>
+                        <TextField
+                            error={this.state.error}
+                            label="Code"
+                            placeholder="Enter Room Code"
+                            value={this.state.roomCode}
+                            helperText={this.state.error}
+                            variant="outlined"
+                            onChange={this.handleTextFieldChange}
+                        />
+                    </Box>
                 </Grid>
                 <Grid item xs={12}>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={this.roomButtonPressed}>Enter Room
+                    <Box m={4} p={3}>
+                        <ButtonGroup variant="contained">
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={this.roomButtonPressed}>Enter Room
                     </Button>
-                </Grid>
-                <Grid item xs={12}>
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        to="/"
-                        component={Link}>Home
+                            <Button
+                                variant="contained"
+                                color="secondary"
+                                to="/"
+                                component={Link}>Home
                     </Button>
+                        </ButtonGroup>
+                    </Box>
                 </Grid>
-            </Grid>
+            </Grid >
         );
     }
 
