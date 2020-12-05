@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Button, Typography, Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
+
 
 export default class Room extends Component {
     constructor(props) {
@@ -24,12 +27,20 @@ export default class Room extends Component {
             });
     }
 
+
     render() {
-        return <div style={{ paddingLeft: "20px" }}>
+        return (<div style={{ paddingLeft: "20px" }}>
             <h3>Room Code: {this.roomCode}</h3>
             <p>Votes: {this.state.votesToSkip}</p>
             <p>Guest Can Pause: {this.state.guestCanPause.toString()}</p>
             <p>Host: {this.state.isHost.toString()}</p>
-        </div>
+            <Button
+                variant="contained"
+                color="secondary"
+                to="/"
+                component={Link}
+            >Leave Room
+                    </Button>
+        </div>);
     }
 }
