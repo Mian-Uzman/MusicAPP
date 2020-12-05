@@ -10,23 +10,34 @@ export default class HomePage extends Component {
     constructor(props) {
         super(props);
 
+    };
+    resize = () => this.forceUpdate()
+
+    componentDidMount() {
+        window.addEventListener('resize', this.resize)
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.resize)
+    }
     render() {
         const titlestyle1 = {
-            width: "450px",
+            height: window.innerHeight,
+            width: window.innerWidth / 4,
             paddingTop: "350px",
-            paddingLeft: "50px",
+            paddingLeft: "220px",
         }
         const titlestyle2 = {
-            width: "520px",
+            height: window.innerHeight,
+            width: window.innerWidth / 4,
             paddingTop: "350px",
-            paddingLeft: "120px",
+            paddingLeft: "220px",
         }
         const titlestyle3 = {
-            width: "520px",
+            height: window.innerHeight,
+            width: window.innerWidth / 4,
             paddingTop: "350px",
-            paddingLeft: "120px",
+            paddingLeft: "220px",
         }
         const titleCard = {
             backgroundColor: "#8c99a6",
@@ -48,64 +59,70 @@ export default class HomePage extends Component {
                     </Grid>
                 </Grid>
                 {/* First Card */}
-                <div style={titlestyle1}>
-                    <Card style={titleCard} className="root" variant="outlined">
-                        <CardContent>
-                            <Typography style={{ color: "#2a2a2a" }} color="textSecondary" gutterBottom>
-                                Stream Music
+                <Grid container item xs={12} spacing={10} justify="center">
+                    <div style={titlestyle1}>
+                        <Card style={titleCard} className="root" variant="outlined">
+                            <CardContent>
+                                <Typography style={{ color: "#2a2a2a" }} color="textSecondary" gutterBottom>
+                                    Stream Music
                         </Typography>
-                            <Typography style={fontColor} variant="h5" component="h2">
-                                Listen to your favourite music with others
+                                <Typography style={fontColor} variant="h5" component="h2">
+                                    Listen to your favourite music with others
                         </Typography>
-                            <Typography style={fontColor} variant="body2" component="p">
-                                Join or Create a Room Now!
+                                <Typography style={fontColor} variant="body2" component="p">
+                                    Join or Create a Room Now!
                         </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button style={{ color: "#2a2a2a" }} size="small" to="meme/" component={Link}>Learn More</Button>
-                        </CardActions>
-                    </Card>
-                </div>
+                            </CardContent>
+                            <CardActions>
+                                <Button style={{ color: "#2a2a2a" }} size="small" to="meme/" component={Link}>Learn More</Button>
+                            </CardActions>
+                        </Card>
+                    </div>
 
-                {/* Second Card */}
-                <div style={titlestyle2}>
-                    <Card style={titleCard} className="root" variant="outlined">
-                        <CardContent>
-                            <Typography style={{ color: "#2a2a2a" }} color="textSecondary" gutterBottom>
-                                Create Room
-                        </Typography>
-                            <Typography style={fontColor} variant="h5" component="h2">
-                                Create a Room to start playing Music
-                        </Typography>
-                            <Typography style={fontColor} variant="body2" component="p">
-                                Create using the link below!
-                        </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button style={{ color: "#2a2a2a" }} size="small" to="create/" component={Link}>Create!</Button>
-                        </CardActions>
-                    </Card>
-                </div>
 
-                {/* Third Card */}
-                <div style={titlestyle3}>
-                    <Card style={titleCard} className="root" variant="outlined">
-                        <CardContent>
-                            <Typography style={{ color: "#2a2a2a" }} color="textSecondary" gutterBottom>
-                                Join Room
+                    {/* Second Card */}
+                    <div style={titlestyle2}>
+                        <Card style={titleCard} className="root" variant="outlined">
+                            <CardContent>
+                                <Typography style={{ color: "#2a2a2a" }} color="textSecondary" gutterBottom>
+                                    Create Room
                         </Typography>
-                            <Typography style={fontColor} variant="h5" component="h2">
-                                Join an existing Room to start playing Music
+                                <Typography style={fontColor} variant="h5" component="h2">
+                                    Create a Room to start playing Music
                         </Typography>
-                            <Typography style={fontColor} variant="body2" component="p">
-                                Join using the Link below!
+                                <Typography style={fontColor} variant="body2" component="p">
+                                    Create using the link below!
                         </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button style={{ color: "#2a2a2a" }} size="small" to="join/" component={Link}>Join!</Button>
-                        </CardActions>
-                    </Card>
-                </div>
+                            </CardContent>
+                            <CardActions>
+                                <Button style={{ color: "#2a2a2a" }} size="small" to="create/" component={Link}>Create!</Button>
+                            </CardActions>
+                        </Card>
+                    </div>
+
+
+
+                    {/* Third Card */}
+                    <div style={titlestyle3}>
+                        <Card style={titleCard} className="root" variant="outlined">
+                            <CardContent>
+                                <Typography style={{ color: "#2a2a2a" }} color="textSecondary" gutterBottom>
+                                    Join Room
+                        </Typography>
+                                <Typography style={fontColor} variant="h5" component="h2">
+                                    Join an existing Room to start playing Music
+                        </Typography>
+                                <Typography style={fontColor} variant="body2" component="p">
+                                    Join using the Link below!
+                        </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button style={{ color: "#2a2a2a" }} size="small" to="join/" component={Link}>Join!</Button>
+                            </CardActions>
+                        </Card>
+                    </div>
+                </Grid>
+
             </Grid>
 
         );
