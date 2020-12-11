@@ -23,19 +23,19 @@ export default class HomePage extends Component {
     render() {
         const titlestyle1 = {
             height: window.innerHeight,
-            width: window.innerWidth / 4,
+            width: window.innerWidth / 3,
             paddingTop: "350px",
             paddingLeft: "220px",
         }
         const titlestyle2 = {
             height: window.innerHeight,
-            width: window.innerWidth / 4,
+            width: window.innerWidth / 3,
             paddingTop: "350px",
             paddingLeft: "220px",
         }
         const titlestyle3 = {
             height: window.innerHeight,
-            width: window.innerWidth / 4,
+            width: window.innerWidth / 3,
             paddingTop: "350px",
             paddingLeft: "220px",
         }
