@@ -60,10 +60,18 @@ export default class CreateRoomPage extends Component {
     render() {
         return (
             <Grid container spacing={1}>
-                <Grid item xs={12} align="center">
-                    <Typography component="h3" variant="h3">Create a Room</Typography>
+                <Grid
+                    item xs={12}
+                    align="center">
+                    <Typography
+                        component="h3"
+                        variant="h3">
+                        Create a Room
+                    </Typography>
                 </Grid>
-                <Grid item xs={12} align="center">
+                <Grid
+                    item xs={12}
+                    align="center">
                     <Box m={4} p={1}>
                         <FormControl component="fieldset">
                             <FormHelperText>
@@ -71,16 +79,24 @@ export default class CreateRoomPage extends Component {
                                     Guest Control of Playback
                                 </div>
                             </FormHelperText>
-                            <RadioGroup row defaultValue="true" onChange={this.handleGuestCanPauseChange}>
-                                <FormControlLabel value="true" control={<Radio color="primary" />}
+                            <RadioGroup
+                                row defaultValue="true"
+                                onChange={this.handleGuestCanPauseChange}>
+                                <FormControlLabel
+                                    value="true"
+                                    control={<Radio color="primary" />}
                                     label="Play/Pause"
                                     labelPlacement="bottom" />
-                                <FormControlLabel value="false" control={<Radio color="secondary" />}
+                                <FormControlLabel
+                                    value="false"
+                                    control={<Radio color="secondary" />}
                                     label="No Control"
                                     labelPlacement="bottom" />
                             </RadioGroup>
                         </FormControl>
-                        <Grid item xs={12} align="center">
+                        <Grid
+                            item xs={12}
+                            align="center">
                             <Box m={2}>
                                 <FormControl>
                                     <TextField
@@ -102,22 +118,24 @@ export default class CreateRoomPage extends Component {
                         </Grid>
                     </Box>
                 </Grid>
-                <Grid item xs={12} align="center">
+                <Grid
+                    item xs={12}
+                    align="center">
                     <Box m={4} p={3}>
                         <ButtonGroup variant="contained">
-                            <Button color="primary"
+                            <Button
+                                color="primary"
                                 variant="contained"
-                                onClick={this.handleRoomButtonPressed}
-                            >Create a Room</Button>
-
-
-                            <Button color="secondary"
+                                onClick={this.handleRoomButtonPressed}>
+                                Create a Room
+                            </Button>
+                            <Button
+                                color="secondary"
                                 variant="contained"
                                 to='/'
-                                component={Link}
-                            >Home</Button>
-
-
+                                component={Link}>
+                                Home
+                            </Button>
                         </ButtonGroup>
                     </Box>
                 </Grid>
